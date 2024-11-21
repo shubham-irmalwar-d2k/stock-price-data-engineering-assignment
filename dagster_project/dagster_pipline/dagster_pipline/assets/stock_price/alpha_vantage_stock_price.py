@@ -96,8 +96,6 @@ def daily_data_analysis_alpha_vantage_stock_price(
     context: AssetExecutionContext,
     rawdata_bucket: S3BucketResource,
 ) -> MaterializeResult:
-    # df = pd.read_parquet("crismac-dl-raw-bucket-dev/alpha_vantage_stock_price_data/date=2024-11-14/stock_price", engine='pyarrow', storage_options=rawdata_bucket)
-
     fs = s3fs.S3FileSystem(
         key=rawdata_bucket.storage_options["key"],
         secret=rawdata_bucket.storage_options["secret"],
